@@ -1,0 +1,25 @@
+[project]
+name = "portfolio-agent"
+version = "0.1.0"
+description = "AI-powered Portfolio Management Agent — 12-week capstone project"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.5",
+    "openai>=1.40",
+    "python-dotenv>=1.0",
+    "rich>=13.0",
+    "pytest>=8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.4",
+    "mypy>=1.10",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
