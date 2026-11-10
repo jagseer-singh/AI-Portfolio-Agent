@@ -91,3 +91,23 @@ User Prompt
   - **Exponential Backoff**: Catching `429` inside the client and waiting 12s, 24s, etc., before retrying.
 - **Traceability (The CSV Log)**:
   Every eval run logs to `evals/results/eval_log.csv` with the current **Git commit hash**, **model name**, **temperature**, and timestamp. This lets us immediately identify regressions whenever code or prompts change.
+
+---
+
+## 8. Eval Analysis: Why 96% and Not 100%? (Eval False Negatives)
+In our baseline eval run with `gemini-3.5-flash-lite`, 24 out of 25 cases passed (96%).
+The only failure was `edge_ambiguous` ("How much is gold?"):
+- The test case specified: `expected_symbols = ["GLD", "XAUUSD"]`.
+- The evaluation check used `all(...)`, expecting both symbols to appear.
+- The model invoked `get_asset_price(symbol="GLD")` — a completely correct, rational single-asset choice.
+- **Key Takeaway**: Evals can have bugs too! In AI engineering, you must review failures to distinguish between **Model Failures** (hallucination, bad tools) and **Eval Specification Bugs** (overly rigid ground truth assertions).
+
+---
+
+## 9. API Quota Management & Budgeting
+- **Constraint**: Daily quota ceiling of 500 requests per day.
+- **Consumption Math**: Because each agent turn makes 2 LLM calls (Call 1: Tool choice, Call 2: Final response), one 25-case eval run costs 50 API calls (10% of the daily allowance).
+- **Best Practice Strategy**:
+  1. Test local logic with unit tests (`pytest` = 0 API calls).
+  2. Test prompts individually during iteration (`python -m src.agent.demo` = 2 API calls).
+  3. Only run the full 25-prompt eval suite when locking in end-of-week milestones.
