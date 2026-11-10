@@ -1,0 +1,155 @@
+timestamp,git_commit,model_name,temperature,case_id,category,prompt,tool_called_correctly,symbols_correct,answer_contains_expected,overall_pass,tools_used,symbols_used,final_answer_snippet,error
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,eq_aapl,equity,What is the current price of Apple stock?,True,True,True,True,get_asset_price,AAPL,The current price of Apple stock (AAPL) is **$189.84 USD**.,
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,eq_msft,equity,How much is Microsoft trading at right now?,True,True,True,True,get_asset_price,MSFT,Microsoft (MSFT) is currently trading at **$420.55 USD**.,
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,eq_googl,equity,Get me the Google stock price.,True,True,True,True,get_asset_price,GOOGL,The current stock price for Google (GOOGL) is **$176.32 USD**.,
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,eq_tsla,equity,What's Tesla's share price?,True,True,True,True,get_asset_price,TSLA,Tesla's (TSLA) current share price is **$248.42 USD**.,
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,eq_nvda,equity,NVIDIA stock price please.,True,True,True,True,get_asset_price,NVDA,The current stock price for NVIDIA (NVDA) is **$132.65 USD**.,
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,eq_meta,equity,How much is Meta Platforms trading at?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,eq_jpm,equity,What's the current JPMorgan stock price?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,eq_amzn,equity,Show me Amazon's price.,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,bond_tlt,bond,What is the price of TLT (20-year Treasury bond ETF)?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,bond_bnd,bond,Give me the BND bond ETF price.,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,bond_agg,bond,How much is AGG trading at?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,gold_gld,gold,What is the GLD ETF price?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,gold_spot,gold,What's the current spot gold price in USD?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,crypto_btc,crypto,Bitcoin price?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,crypto_eth,crypto,How much is Ethereum right now?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,crypto_sol,crypto,Get Solana's current price.,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,multi_tech,multi,"What are the prices of AAPL, MSFT, and GOOGL?",False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,multi_mixed,multi,"Give me prices for AAPL, BTC-USD, and GLD.",False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,multi_crypto,multi,"Show me all crypto prices: BTC, ETH, SOL.",False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,compare_eq,analysis,"Which is more expensive right now, Apple or Microsoft stock?",False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,compare_crypto,analysis,Is Bitcoin or Ethereum more expensive? By how much?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,edge_unknown,edge,What's the price of XYZFAKE stock?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,edge_no_tool,edge,What is a stock?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,edge_ambiguous,edge,How much is gold?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:29.429431+00:00,84240f7,gemini-3.5-flash,0.0,edge_natural,edge,I want to know if I should buy Tesla. What's the price?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,eq_aapl,equity,What is the current price of Apple stock?,True,True,True,True,get_asset_price,AAPL,The current price of Apple stock (AAPL) is **$189.84 USD**.,
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,eq_msft,equity,How much is Microsoft trading at right now?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,eq_googl,equity,Get me the Google stock price.,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,eq_tsla,equity,What's Tesla's share price?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,eq_nvda,equity,NVIDIA stock price please.,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,eq_meta,equity,How much is Meta Platforms trading at?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,eq_jpm,equity,What's the current JPMorgan stock price?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,eq_amzn,equity,Show me Amazon's price.,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,bond_tlt,bond,What is the price of TLT (20-year Treasury bond ETF)?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,bond_bnd,bond,Give me the BND bond ETF price.,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,bond_agg,bond,How much is AGG trading at?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,gold_gld,gold,What is the GLD ETF price?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,gold_spot,gold,What's the current spot gold price in USD?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,crypto_btc,crypto,Bitcoin price?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,crypto_eth,crypto,How much is Ethereum right now?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,crypto_sol,crypto,Get Solana's current price.,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,multi_tech,multi,"What are the prices of AAPL, MSFT, and GOOGL?",False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,multi_mixed,multi,"Give me prices for AAPL, BTC-USD, and GLD.",False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,multi_crypto,multi,"Show me all crypto prices: BTC, ETH, SOL.",False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,compare_eq,analysis,"Which is more expensive right now, Apple or Microsoft stock?",False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,compare_crypto,analysis,Is Bitcoin or Ethereum more expensive? By how much?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,edge_unknown,edge,What's the price of XYZFAKE stock?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,edge_no_tool,edge,What is a stock?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,edge_ambiguous,edge,How much is gold?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:17:35.246892+00:00,84240f7,gemini-3.5-flash,0.0,edge_natural,edge,I want to know if I should buy Tesla. What's the price?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,eq_aapl,equity,What is the current price of Apple stock?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,eq_msft,equity,How much is Microsoft trading at right now?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,eq_googl,equity,Get me the Google stock price.,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,eq_tsla,equity,What's Tesla's share price?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,eq_nvda,equity,NVIDIA stock price please.,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,eq_meta,equity,How much is Meta Platforms trading at?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,eq_jpm,equity,What's the current JPMorgan stock price?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,eq_amzn,equity,Show me Amazon's price.,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,bond_tlt,bond,What is the price of TLT (20-year Treasury bond ETF)?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,bond_bnd,bond,Give me the BND bond ETF price.,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,bond_agg,bond,How much is AGG trading at?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,gold_gld,gold,What is the GLD ETF price?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,gold_spot,gold,What's the current spot gold price in USD?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,crypto_btc,crypto,Bitcoin price?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,crypto_eth,crypto,How much is Ethereum right now?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,crypto_sol,crypto,Get Solana's current price.,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,multi_tech,multi,"What are the prices of AAPL, MSFT, and GOOGL?",False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,multi_mixed,multi,"Give me prices for AAPL, BTC-USD, and GLD.",False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,multi_crypto,multi,"Show me all crypto prices: BTC, ETH, SOL.",False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,compare_eq,analysis,"Which is more expensive right now, Apple or Microsoft stock?",False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,compare_crypto,analysis,Is Bitcoin or Ethereum more expensive? By how much?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,edge_unknown,edge,What's the price of XYZFAKE stock?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,edge_no_tool,edge,What is a stock?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,edge_ambiguous,edge,How much is gold?,False,False,False,False,,,,Error code: 429
+2026-11-10T13:58:16.000737+00:00,84240f7,gemini-3.5-flash,0.0,edge_natural,edge,I want to know if I should buy Tesla. What's the price?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,eq_aapl,equity,What is the current price of Apple stock?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,eq_msft,equity,How much is Microsoft trading at right now?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,eq_googl,equity,Get me the Google stock price.,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,eq_tsla,equity,What's Tesla's share price?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,eq_nvda,equity,NVIDIA stock price please.,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,eq_meta,equity,How much is Meta Platforms trading at?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,eq_jpm,equity,What's the current JPMorgan stock price?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,eq_amzn,equity,Show me Amazon's price.,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,bond_tlt,bond,What is the price of TLT (20-year Treasury bond ETF)?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,bond_bnd,bond,Give me the BND bond ETF price.,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,bond_agg,bond,How much is AGG trading at?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,gold_gld,gold,What is the GLD ETF price?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,gold_spot,gold,What's the current spot gold price in USD?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,crypto_btc,crypto,Bitcoin price?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,crypto_eth,crypto,How much is Ethereum right now?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,crypto_sol,crypto,Get Solana's current price.,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,multi_tech,multi,"What are the prices of AAPL, MSFT, and GOOGL?",False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,multi_mixed,multi,"Give me prices for AAPL, BTC-USD, and GLD.",False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,multi_crypto,multi,"Show me all crypto prices: BTC, ETH, SOL.",False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,compare_eq,analysis,"Which is more expensive right now, Apple or Microsoft stock?",False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,compare_crypto,analysis,Is Bitcoin or Ethereum more expensive? By how much?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,edge_unknown,edge,What's the price of XYZFAKE stock?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,edge_no_tool,edge,What is a stock?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,edge_ambiguous,edge,How much is gold?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:06:05.781382+00:00,84240f7,gemini-3.5-flash,0.0,edge_natural,edge,I want to know if I should buy Tesla. What's the price?,False,False,False,False,,,,Error code: 429
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,eq_aapl,equity,What is the current price of Apple stock?,True,True,True,True,get_asset_price,AAPL,The current price of Apple stock (AAPL) is **$189.84 USD**.,
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,eq_msft,equity,How much is Microsoft trading at right now?,True,True,True,True,get_asset_price,MSFT,Microsoft (MSFT) is currently trading at **$420.55 USD**.,
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,eq_googl,equity,Get me the Google stock price.,True,True,True,True,get_asset_price,GOOGL,The current price for Google (GOOGL) is **$176.32 USD**.,
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,eq_tsla,equity,What's Tesla's share price?,True,True,True,True,get_asset_price,TSLA,"Tesla's current share price is **$248.42 USD** (as of November 10, 2026).",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,eq_nvda,equity,NVIDIA stock price please.,True,True,True,True,get_asset_price,NVDA,"The current price of NVIDIA (NVDA) stock is **$132.65 USD** (as of November 10, 2026).",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,eq_meta,equity,How much is Meta Platforms trading at?,True,True,True,True,get_asset_price,META,Meta Platforms (META) is currently trading at **$567.12 USD**.,
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,eq_jpm,equity,What's the current JPMorgan stock price?,True,True,True,True,get_asset_price,JPM,"The current price of JPMorgan Chase & Co. (JPM) stock is **$198.73 USD** (as of November 10, 2026).",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,eq_amzn,equity,Show me Amazon's price.,True,True,True,True,get_asset_price,AMZN,Amazon (AMZN) is currently trading at **$185.60 USD**.,
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,bond_tlt,bond,What is the price of TLT (20-year Treasury bond ETF)?,True,True,True,True,get_asset_price,TLT,The current price of TLT (20-year Treasury bond ETF) is **$92.45 USD**.,
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,bond_bnd,bond,Give me the BND bond ETF price.,True,True,True,True,get_asset_price,BND,The current price for the Vanguard Total Bond Market ETF (BND) is **$71.38 USD** (as of 2026-11-10).,
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,bond_agg,bond,How much is AGG trading at?,True,True,True,True,get_asset_price,AGG,AGG is currently trading at $98.20 USD.,
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,gold_gld,gold,What is the GLD ETF price?,True,True,True,True,get_asset_price,GLD,"The current price of the GLD ETF is **$221.74 USD** (as of November 10, 2026).",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,gold_spot,gold,What's the current spot gold price in USD?,True,True,True,True,get_asset_price,XAUUSD,"The current spot price of gold (XAUUSD) is **$2,385.50 USD** per ounce.",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,crypto_btc,crypto,Bitcoin price?,True,True,True,True,get_asset_price,BTC-USD,"The current price of Bitcoin (BTC-USD) is **$68,432.10 USD**.",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,crypto_eth,crypto,How much is Ethereum right now?,True,True,True,True,get_asset_price,ETH-USD,"The current price of Ethereum (ETH-USD) is **$3,521.85 USD**.",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,crypto_sol,crypto,Get Solana's current price.,True,True,True,True,get_asset_price,SOL-USD,The current price of Solana (SOL-USD) is **$172.60 USD**.,
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,multi_tech,multi,"What are the prices of AAPL, MSFT, and GOOGL?",True,True,True,True,get_multiple_asset_prices,"AAPL,MSFT,GOOGL","Here are the current prices for AAPL, MSFT, and GOOGL:
+
+* **AAPL (Apple Inc.):** $189.84 USD
+* **MSFT (Microsoft Corp.):** $420.55 USD
+* **GOOGL (Alphabet Inc.):** $176.32 USD",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,multi_mixed,multi,"Give me prices for AAPL, BTC-USD, and GLD.",True,True,True,True,get_multiple_asset_prices,"AAPL,BTC-USD,GLD","Here are the current prices:
+
+* **AAPL** (Equity): $189.84 USD
+* **BTC-USD** (Crypto): $68,432.10 USD
+* **GLD** (Gold): $221.74 USD",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,multi_crypto,multi,"Show me all crypto prices: BTC, ETH, SOL.",True,True,True,True,get_multiple_asset_prices,"BTC-USD,ETH-USD,SOL-USD","Here are the current crypto prices:
+
+* **Bitcoin (BTC-USD):** $68,432.10 USD
+* **Ethereum (ETH-USD):** $3,521.85 USD
+* **Solana (SOL-USD):** $172.60 USD",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,compare_eq,analysis,"Which is more expensive right now, Apple or Microsoft stock?",True,True,True,True,get_multiple_asset_prices,"AAPL,MSFT","Based on the current stock prices:
+
+* **Apple (AAPL):** $189.84 USD per share
+* **Microsoft (MSFT):** $420.55 USD per share
+
+**Microsoft** is currently more expensive per share.",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,compare_crypto,analysis,Is Bitcoin or Ethereum more expensive? By how much?,True,True,True,True,get_multiple_asset_prices,"BTC-USD,ETH-USD","**Bitcoin (BTC)** is more expensive than Ethereum (ETH). 
+
+Here are the current prices:
+* **Bitcoin (BTC-USD):** $68,432.10
+* **Ethereum (ETH-USD):** $3,521.85
+
+Bitcoin is more expensive by **$64,910.",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,edge_unknown,edge,What's the price of XYZFAKE stock?,True,True,True,True,get_asset_price,XYZFAKE,"I'm sorry, but XYZFAKE is an unknown symbol, so I couldn't fetch a price for it. Please check the ticker symbol and try again.",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,edge_no_tool,edge,What is a stock?,True,True,True,True,,,"A **stock** (also known as an equity or share) is a financial instrument that represents a fractional ownership in a corporation. 
+
+When you buy a share of stock, you are buying a small piece of that ",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,edge_ambiguous,edge,How much is gold?,True,False,True,False,get_asset_price,GLD,"The current price for SPDR Gold Shares (GLD) is **$221.74 USD**. 
+
+*(Note: Prices fluctuate constantly; this was fetched at 14:06 UTC.)*",
+2026-11-10T14:07:11.272636+00:00,84240f7,gemini-3.5-flash-lite,0.0,edge_natural,edge,I want to know if I should buy Tesla. What's the price?,True,True,True,True,get_asset_price,TSLA,"The current price of Tesla (TSLA) is **$248.42 USD**. 
+
+As a portfolio management assistant, I can provide you with the current price and help you analyze how TSLA might fit into your portfolio (such ",

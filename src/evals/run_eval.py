@@ -14,6 +14,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
@@ -254,6 +255,7 @@ def run_eval(
     cases: list[EvalCase] | None = None,
     config: LLMConfig | None = None,
     runs_per_case: int = 1,
+    delay: float = 4.0,
 ) -> list[EvalScore]:
     """Run the full eval suite and return scores."""
     cases = cases or EVAL_CASES
@@ -263,7 +265,8 @@ def run_eval(
 
     all_scores: list[EvalScore] = []
 
-    for case in cases:
+    for i, case in enumerate(cases, 1):
+        print(f"[{i}/{len(cases)}] Evaluating: {case.id} ({case.category})", flush=True)
         best_score = None
         for run_idx in range(runs_per_case):
             try:
@@ -289,6 +292,8 @@ def run_eval(
                 best_score = score
 
         all_scores.append(best_score)  # type: ignore[arg-type]
+        if delay > 0 and i < len(cases):
+            time.sleep(delay)
 
     _append_to_csv(all_scores, cfg, git_commit, csv_path)
     _print_summary(all_scores, cfg, git_commit)
@@ -302,6 +307,7 @@ def main():
     parser.add_argument("--runs", type=int, default=1, help="Runs per case (for non-zero temp)")
     parser.add_argument("--model", type=str, default=None, help="Override model name")
     parser.add_argument("--temperature", type=float, default=None, help="Override temperature")
+    parser.add_argument("--delay", type=float, default=4.0, help="Delay between cases in seconds")
     args = parser.parse_args()
 
     if args.dry:
@@ -322,7 +328,7 @@ def main():
         print("Note: temperature > 0 detected, running each case 3 times (override with --runs)")
         runs = 3
 
-    scores = run_eval(config=cfg, runs_per_case=runs)
+    scores = run_eval(config=cfg, runs_per_case=runs, delay=args.delay)
 
     # Exit with error code if pass rate < 80%
     passed = sum(1 for s in scores if s.overall_pass)

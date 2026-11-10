@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import os
+import time
 from dataclasses import dataclass, field
 from typing import Optional
 
@@ -30,11 +31,23 @@ class LLMConfig:
     model: str = os.getenv("MODEL_NAME", "gpt-4o-mini")
     temperature: float = float(os.getenv("TEMPERATURE", "0"))
     max_tokens: int = 4096
-    api_key: Optional[str] = os.getenv("OPENAI_API_KEY")
+    api_key: Optional[str] = None
+    base_url: Optional[str] = None
 
     def __post_init__(self):
         if not self.api_key:
-            raise ValueError("OPENAI_API_KEY is not set. Copy .env.example → .env and fill it in.")
+            gemini_key = os.getenv("GEMINI_API_KEY")
+            openai_key = os.getenv("OPENAI_API_KEY")
+            if gemini_key:
+                self.api_key = gemini_key
+                if not self.base_url:
+                    self.base_url = "https://generativelanguage.googleapis.com/v1beta/openai/"
+            elif openai_key:
+                self.api_key = openai_key
+            else:
+                raise ValueError(
+                    "No API key found. Set GEMINI_API_KEY or OPENAI_API_KEY in your .env file."
+                )
 
 
 # --------------------------------------------------------------------------- #
@@ -83,7 +96,7 @@ def run_agent(
     return the final assistant text plus a log of every tool invocation.
     """
     cfg = config or LLMConfig()
-    client = OpenAI(api_key=cfg.api_key)
+    client = OpenAI(api_key=cfg.api_key, base_url=cfg.base_url)
     tools = get_tool_definitions()
 
     messages: list[dict] = [
@@ -94,14 +107,23 @@ def run_agent(
 
     # Loop: the model may make multiple rounds of tool calls
     for _ in range(10):  # safety cap
-        response = client.chat.completions.create(
-            model=cfg.model,
-            temperature=cfg.temperature,
-            max_tokens=cfg.max_tokens,
-            messages=messages,
-            tools=tools,
-            tool_choice="auto",
-        )
+        for attempt in range(4):
+            try:
+                response = client.chat.completions.create(
+                    model=cfg.model,
+                    temperature=cfg.temperature,
+                    max_tokens=cfg.max_tokens,
+                    messages=messages,
+                    tools=tools,
+                    tool_choice="auto",
+                )
+                break
+            except Exception as e:
+                err_str = str(e)
+                if ("429" in err_str or "rate" in err_str.lower()) and attempt < 3:
+                    time.sleep(12 * (attempt + 1))
+                else:
+                    raise
         msg = response.choices[0].message
 
         # If the model has no tool calls, we're done
@@ -113,22 +135,7 @@ def run_agent(
             )
 
         # Process each tool call
-        assistant_msg = {
-            "role": "assistant",
-            "content": msg.content,
-            "tool_calls": [
-                {
-                    "id": tc.id,
-                    "type": "function",
-                    "function": {
-                        "name": tc.function.name,
-                        "arguments": tc.function.arguments,
-                    },
-                }
-                for tc in msg.tool_calls
-            ],
-        }
-        messages.append(assistant_msg)
+        messages.append(msg.model_dump(exclude_unset=True))
 
         for tc in msg.tool_calls:
             args = json.loads(tc.function.arguments)
